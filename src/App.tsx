@@ -1,19 +1,35 @@
-// @ts-ignore
-import logo from "./assets/images/logo-react.png";
+import { useEffect, useState } from "react";
+
+import { api } from "./api";
 
 const App = () => {
-  return (
-    <div className="react-container">
-      <div className="react-logo">
-        <img className="rotate" src={logo} alt="" />
-      </div>
-      <div className="react-container__content">
-        <h3>Edit src/App.tsx and save to reload</h3>
-      </div>
-      <div className="react-container__footer">
-        <a href="https://reactjs.org/docs/getting-started.html">Learn React</a>
-      </div>
-    </div>
+  const [countries, setCountries] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const getCountries = async () => {
+    try {
+      const result = await api.get("all");
+      setCountries(result);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getCountries();
+  }, []);
+
+  return isLoading ? (
+    <h1>Loading...</h1>
+  ) : (
+    <ul>
+      {countries.map((item, index) => (
+        <li key={index}>{item.name.common}</li>
+      ))}
+    </ul>
   );
 };
+
 export { App };
