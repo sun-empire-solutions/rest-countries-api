@@ -10,10 +10,9 @@ const App = () => {
     try {
       const result = await api.get("all");
       setCountries(result);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
