@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 
 import { api } from "./api";
+import { Country } from "./types";
 
 const App = () => {
-  const [countries, setCountries] = useState([]);
+  const [countries, setCountries] = useState<Country[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   const getCountries = async () => {
@@ -25,7 +26,10 @@ const App = () => {
   ) : (
     <ul>
       {countries.map((item, index) => (
-        <li key={index}>{item.name.common}</li>
+        <li key={index}>
+          {item.name.common}
+          <img src={item.flags.png} alt="" />
+        </li>
       ))}
     </ul>
   );
