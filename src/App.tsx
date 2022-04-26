@@ -1,7 +1,7 @@
-import { Container } from "./containers/Container";
+import { CountryListContainer } from "./containers/CountryListContainer";
 
 const App = () => {
-  return <Container />;
+  return <CountryListContainer />;
 };
 
 export { App };

@@ -1,17 +1,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: 0px;
+  box-sizing: border-box;
 }
 
-.body {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--Very-Light-Gray);
-}
-
-.container {
+.country-list {
   width: 100vw;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -21,7 +14,7 @@
   margin-top: 40px;
 }
 
-li {
+.country-item {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -30,7 +23,7 @@ li {
   background-color: hsl(0, 0%, 100%);
 }
 
-li img {
+.country-item img {
   height: 150px;
 }
 
