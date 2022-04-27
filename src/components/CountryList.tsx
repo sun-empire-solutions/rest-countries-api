@@ -1,8 +1,13 @@
 import { Country } from "../types";
 import { CountryItem } from "./CountryItem";
+import { Spinner } from "./Spinner";
 
-const CountryList = ({ countries }: IProps) => {
-  return (
+const CountryList = ({ countries, isLoading }: IProps) => {
+  return isLoading ? (
+    <div className="loading">
+      <Spinner />
+    </div>
+  ) : (
     <ul className="country-list">
       {countries.map((item, index) => (
         <CountryItem key={index} item={item} />
@@ -11,6 +16,6 @@ const CountryList = ({ countries }: IProps) => {
   );
 };
 
-type IProps = { countries: Country[] };
+type IProps = { countries: Country[]; isLoading: boolean };
 
 export { CountryList };

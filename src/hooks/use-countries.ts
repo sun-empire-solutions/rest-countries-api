@@ -7,12 +7,14 @@ const useCountries = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [countries, setCountries] = useState<Country[]>([]);
   const [nameFilter, setNameFilter] = useState("");
-  const [regionFilter, setRegionFilter] = useState("");
+  const [regionFilter, setRegionFilter] = useState("All");
   const [error, setError] = useState<Error>(null);
 
   const handleResponse = async (path: string) => {
     setIsLoading(true);
     const { countries: countriesResponse, error } = await api.get(path);
+    console.log(path, countriesResponse);
+
     if (error) {
       setError(error);
     } else {
@@ -25,12 +27,12 @@ const useCountries = () => {
     handleResponse("/all");
   };
 
-  const getCountriesByName = () => {
-    handleResponse(`/name/${nameFilter}`);
-  };
-
   const getCountriesByRegion = () => {
-    handleResponse(`/region/${regionFilter}`);
+    if (regionFilter !== "All") {
+      handleResponse(`/region/${regionFilter}`);
+    } else {
+      getAllCountries();
+    }
   };
 
   useEffect(() => {
@@ -38,11 +40,7 @@ const useCountries = () => {
   }, []);
 
   useEffect(() => {
-    nameFilter && getCountriesByName();
-  }, [nameFilter]);
-
-  useEffect(() => {
-    regionFilter && getCountriesByRegion();
+    getCountriesByRegion();
   }, [regionFilter]);
 
   return {
@@ -51,6 +49,7 @@ const useCountries = () => {
     error,
     nameFilter,
     setNameFilter,
+    regionFilter,
     setRegionFilter,
   };
 };
