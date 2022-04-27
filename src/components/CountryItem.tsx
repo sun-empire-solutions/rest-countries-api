@@ -11,12 +11,12 @@ const CountryItem = ({
 }: IProps) => {
   return (
     <li className="country-item">
-      <img src={countryFlagUrl} alt="" />
-      <div className="descripcion">
+      <img className="country-item_flag" src={countryFlagUrl} alt="" />
+      <div className="country-item_description">
         <span>
           <strong>{countryCommonName}</strong>
         </span>
-        <div className="info">
+        <div className="country-item_info">
           <span>
             <strong>Polulation: </strong>
             {population}

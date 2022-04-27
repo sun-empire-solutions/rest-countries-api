@@ -1,0 +1,31 @@
+.country-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 3px 3px 5px #dadadad4;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+
+  .country-item_flag {
+    height: 150px;
+  }
+
+  .country-item_description {
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+
+  .country-item_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 60px;
+    margin-top: 15px;
+  }
+}
