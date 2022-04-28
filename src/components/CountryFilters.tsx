@@ -1,4 +1,6 @@
 import { ChangeEvent } from "react";
+//@ts-ignore
+import search from "./../assets/images/search.svg";
 
 const CountryFilters = ({
   nameFilter,
@@ -16,12 +18,19 @@ const CountryFilters = ({
 
   return (
     <div className="country-filters">
-      <input
-        className="name-filter"
-        type="text"
-        value={nameFilter}
-        onChange={handleNameChange}
-      />
+      <div className="name-filter">
+        <input
+          className=""
+          type="text"
+          value={nameFilter}
+          onChange={handleNameChange}
+          placeholder="Search for a country..."
+        />
+        <div className="img-icon">
+          <img src={search} alt="" />
+        </div>
+      </div>
+
       <select
         className="region-filter"
         onChange={handleRegionSelect}
