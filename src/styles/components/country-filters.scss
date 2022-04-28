@@ -7,20 +7,33 @@
   border: none;
 
   .name-filter {
-    width: 350px;
-    background-color: $White;
-    border-color: $White;
-    border-radius: 3px;
-    box-shadow: 1px 1px 1px 1px #dadadad4;
-    border: none;
-    outline: none;
-    padding-left: 50px;
-    padding-right: 20px;
     position: relative;
-  }
-  ::placeholder {
-    position: absolute;
-    color: $Dark-Gray;
-    top: 30%;
+    width: 350px;
+    height: 100%;
+    input {
+      position: absolute;
+      width: 350px;
+      height: 40px;
+      background-color: $White;
+      border-color: $White;
+      border-radius: 3px;
+      box-shadow: 1px 1px 1px 1px #dadadad4;
+      border: none;
+      outline: none;
+      padding-left: 50px;
+      padding-right: 20px;
+    }
+    ::placeholder {
+      position: absolute;
+      color: $Dark-Gray;
+      top: 30%;
+    }
+    .img-icon {
+      position: absolute;
+      width: 20px;
+      height: 100%;
+      margin-top: 10px;
+      margin-left: 20px;
+    }
   }
 }
