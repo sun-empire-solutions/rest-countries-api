@@ -21,6 +21,7 @@ const CountryFilters = ({
         type="text"
         value={nameFilter}
         onChange={handleNameChange}
+        placeholder="Search for a country..."
       />
       <select
         className="region-filter"

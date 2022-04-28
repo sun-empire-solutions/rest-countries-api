@@ -5,6 +5,7 @@
   width: 250px;
   background-color: hsl(0, 0%, 100%);
   box-shadow: 3px 3px 5px #dadadad4;
+  border-radius: 5px;
 
   &:hover {
     cursor: pointer;
@@ -13,6 +14,7 @@
 
   .country-item_flag {
     height: 150px;
+    border-radius: 5px 5px 0px 0px;
   }
 
   .country-item_description {
