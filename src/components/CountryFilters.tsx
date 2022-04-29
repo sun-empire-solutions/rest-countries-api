@@ -36,7 +36,9 @@ const CountryFilters = ({
         onChange={handleRegionSelect}
         value={regionFilter}
       >
-        <option value="All">All</option>
+        <option selected value="All">
+          All
+        </option>
         <option value="Africa">Africa</option>
         <option value="America">America</option>
         <option value="Asia">Asia</option>
