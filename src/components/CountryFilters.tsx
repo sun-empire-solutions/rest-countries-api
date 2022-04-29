@@ -1,6 +1,10 @@
-import { ChangeEvent } from "react";
+import React, { ChangeEvent } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 //@ts-ignore
 import search from "./../assets/images/search.svg";
+//@ts-ignore
+import remove from "./../assets/images/remove.svg";
 
 const CountryFilters = ({
   nameFilter,
@@ -8,12 +12,24 @@ const CountryFilters = ({
   regionFilter,
   setRegionFilter,
 }: IProps) => {
+  const [isRemoveButtonVisible, setIsRemovebuttonVisible] = useState(false);
+
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setNameFilter(event.target.value);
+    if (event.target.value === "") {
+      setIsRemovebuttonVisible(false);
+    } else {
+      setIsRemovebuttonVisible(true);
+    }
   };
 
   const handleRegionSelect = (event: ChangeEvent<HTMLSelectElement>) => {
     setRegionFilter(event.target.value);
+  };
+
+  const clearNameInputFilter = () => {
+    setNameFilter("");
+    setIsRemovebuttonVisible(false);
   };
 
   return (
@@ -26,9 +42,18 @@ const CountryFilters = ({
           onChange={handleNameChange}
           placeholder="Search for a country..."
         />
-        <div className="img-icon">
+        <div className="img-icon-search">
           <img src={search} alt="" />
         </div>
+        {isRemoveButtonVisible && (
+          <div
+            className="img-icon-remove"
+            role="button"
+            onClick={clearNameInputFilter}
+          >
+            <img src={remove} />
+          </div>
+        )}
       </div>
 
       <select
@@ -36,9 +61,7 @@ const CountryFilters = ({
         onChange={handleRegionSelect}
         value={regionFilter}
       >
-        <option selected value="All">
-          All
-        </option>
+        <option value="All">All</option>
         <option value="Africa">Africa</option>
         <option value="America">America</option>
         <option value="Asia">Asia</option>
