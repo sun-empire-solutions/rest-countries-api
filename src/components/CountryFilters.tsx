@@ -12,14 +12,14 @@ const CountryFilters = ({
   regionFilter,
   setRegionFilter,
 }: IProps) => {
-  const [State, setState] = useState("invisible");
+  const [isRemoveButtonVisible, setIsRemovebuttonVisible] = useState(false);
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setNameFilter(event.target.value);
     if (event.target.value === "") {
-      setState("invisible");
+      setIsRemovebuttonVisible(false);
     } else {
-      setState("visible");
+      setIsRemovebuttonVisible(true);
     }
   };
 
@@ -27,9 +27,9 @@ const CountryFilters = ({
     setRegionFilter(event.target.value);
   };
 
-  const clearInput = () => {
+  const clearNameInputFilter = () => {
     setNameFilter("");
-    setState("invisible");
+    setIsRemovebuttonVisible(false);
   };
 
   return (
@@ -45,9 +45,15 @@ const CountryFilters = ({
         <div className="img-icon-search">
           <img src={search} alt="" />
         </div>
-        <div className={`img-icon-remove ${State}`} onClick={clearInput}>
-          <img src={remove} alt="" />
-        </div>
+        {isRemoveButtonVisible && (
+          <div
+            className="img-icon-remove"
+            role="button"
+            onClick={clearNameInputFilter}
+          >
+            <img src={remove} />
+          </div>
+        )}
       </div>
 
       <select

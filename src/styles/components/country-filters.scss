@@ -10,6 +10,7 @@
     position: relative;
     width: 350px;
     height: 100%;
+
     input {
       position: absolute;
       width: 350px;
@@ -21,13 +22,15 @@
       border: none;
       outline: none;
       padding-left: 50px;
-      padding-right: 20px;
+      padding-right: 35px;
     }
+
     ::placeholder {
       position: absolute;
       color: $Dark-Gray;
       top: 30%;
     }
+
     .img-icon-search {
       position: absolute;
       width: 20px;
@@ -35,22 +38,18 @@
       margin-top: 10px;
       margin-left: 20px;
     }
+
     .img-icon-remove {
       position: absolute;
       width: 23px;
-      height: 100%;
-      margin-top: 9px;
-      margin-left: 320px;
+      height: 23px;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-45%);
 
       &:hover {
         cursor: pointer;
       }
-    }
-    .img-icon-remove.invisible {
-      display: none;
-    }
-    .img-icon-remove.visible {
-      display: inherit;
     }
   }
 }
