@@ -28,12 +28,29 @@
       color: $Dark-Gray;
       top: 30%;
     }
-    .img-icon {
+    .img-icon-search {
       position: absolute;
       width: 20px;
       height: 100%;
       margin-top: 10px;
       margin-left: 20px;
+    }
+    .img-icon-remove {
+      position: absolute;
+      width: 23px;
+      height: 100%;
+      margin-top: 9px;
+      margin-left: 320px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .img-icon-remove.invisible {
+      display: none;
+    }
+    .img-icon-remove.visible {
+      display: inherit;
     }
   }
 }
