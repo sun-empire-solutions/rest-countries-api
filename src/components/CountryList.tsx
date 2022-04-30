@@ -8,11 +8,11 @@ const CountryList = ({ countries, isLoading }: IProps) => {
       <Spinner />
     </div>
   ) : (
-    <ul className="country-list">
+    <div className="country-list">
       {countries.map((item, index) => (
         <CountryItem key={index} item={item} />
       ))}
-    </ul>
+    </div>
   );
 };
 
