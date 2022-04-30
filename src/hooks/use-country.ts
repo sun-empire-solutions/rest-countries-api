@@ -11,7 +11,6 @@ const useCountry = () => {
   const handleResponse = async (path: string) => {
     setIsLoading(true);
     const { response, error } = await api.get(path);
-    console.log(path, response);
 
     if (error) {
       setError(error);

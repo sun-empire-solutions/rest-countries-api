@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Spinner } from "../components/Spinner";
 
 import { useCountry } from "../hooks/use-country";
@@ -7,17 +7,24 @@ import { useCountry } from "../hooks/use-country";
 const CountryDetailContainer = () => {
   const { country, isLoading, error, getCountry } = useCountry();
   const { code } = useParams();
-  console.log(code);
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
 
   useEffect(() => {
     getCountry(code);
   }, []);
 
-  useEffect(() => {
-    console.log(country);
-  }, [country]);
-
-  return isLoading ? <Spinner /> : <div>{country.name.common}</div>;
+  return isLoading ? (
+    <Spinner />
+  ) : (
+    <div>
+      <button onClick={handleGoBack}>Go back</button>
+      <span>{country.name.common}</span>
+    </div>
+  );
 };
 
 export { CountryDetailContainer };

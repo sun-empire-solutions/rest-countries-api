@@ -13,7 +13,6 @@ const useCountries = () => {
   const handleResponse = async (path: string) => {
     setIsLoading(true);
     const { response: countriesResponse, error } = await api.get(path);
-    console.log(path, countriesResponse);
 
     if (error) {
       setError(error);
