@@ -1,0 +1,84 @@
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.div-button {
+  margin-bottom: 50px;
+
+  button {
+    height: 30px;
+    width: 90px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    box-shadow: 0px 0px 2px 2px #dadadad4;
+
+    border-radius: 3px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.country-detail {
+  display: flex;
+  flex-direction: row;
+
+  .flag-img {
+    display: flex;
+    flex: 1;
+
+    img {
+      height: 300px;
+      width: 90%;
+    }
+  }
+  .description-country {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    .name-country {
+      h1 {
+        margin-bottom: 30px;
+
+        font-size: 30px;
+      }
+    }
+    .descrip {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      h5 {
+        margin-bottom: 3px;
+        font-size: 14px;
+        font-weight: normal;
+      }
+    }
+    .border-country {
+      display: flex;
+      align-items: center;
+      margin-top: 50px;
+      font-size: 18px;
+
+      .border-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.75rem;
+
+        .border-list_item {
+          padding: 0rem 1rem;
+          background-color: #ffffff00;
+          box-shadow: 0px 0px 2px 2px #e6e6e6;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
