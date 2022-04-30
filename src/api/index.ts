@@ -12,9 +12,9 @@ const request = async (
       headers: { "Content-Type": "application/json" },
     });
     const responseBody = await response.json();
-    return { countries: responseBody, error: null };
+    return { response: responseBody, error: null };
   } catch (error) {
-    return { countries: null, error };
+    return { response: null, error };
   }
 };
 
@@ -27,7 +27,7 @@ const api = { get };
 type Method = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
 type IResponse =
-  | { countries: Country[]; error: null }
-  | { countries: null; error: Error };
+  | { response: Country[] | Country; error: null }
+  | { response: null; error: Error };
 
 export { api };
