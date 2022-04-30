@@ -3,7 +3,7 @@ export type Country = {
     common: string;
     official: string;
     nativeName: {
-      spa: {
+      [key in string]: {
         official: string;
         common: string;
       };
@@ -18,7 +18,7 @@ export type Country = {
   status: string;
   unMember: boolean;
   currencies: {
-    UYU: {
+    [key in string]: {
       name: string;
       symbol: string;
     };

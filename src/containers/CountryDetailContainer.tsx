@@ -36,7 +36,7 @@ const CountryDetailContainer = () => {
             <div className="descrip1">
               <h5>
                 <strong>Native Name: </strong>
-                {country.name.nativeName.spa.common}
+                {Object.entries(country.name.nativeName)[0][1].common}
               </h5>
               <h5>
                 <strong>Population: </strong>
@@ -62,11 +62,13 @@ const CountryDetailContainer = () => {
               </h5>
               <h5>
                 <strong>Currencies: </strong>
-                {country.currencies.UYU.name}
+                {Object.entries(country.currencies)[0][1].name}
               </h5>
               <h5>
                 <strong>Lenguajes: </strong>
-                {country.languages.spa}
+                {Object.entries(country.languages)
+                  .map((item) => item[1])
+                  .join(", ")}
               </h5>
             </div>
           </div>
@@ -74,7 +76,13 @@ const CountryDetailContainer = () => {
             <h5>
               <strong>Borders Countries: </strong>
             </h5>
-            <p>{country.borders}</p>
+            <div className="border-list">
+              {country.borders.map((border, index) => (
+                <div key={index} className="border-list_item">
+                  {border}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
