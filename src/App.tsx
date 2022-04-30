@@ -9,8 +9,8 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<CountriesLayout />}>
-          <Route path="/countries/:code" element={<CountryDetailContainer />} />
           <Route index element={<CountryListContainer />} />
+          <Route path="/countries/:code" element={<CountryDetailContainer />} />
         </Route>
       </Routes>
     </BrowserRouter>
