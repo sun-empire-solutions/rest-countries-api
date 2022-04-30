@@ -12,6 +12,7 @@ module.exports = {
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "build"),
+    publicPath: "/",
     clean: true,
   },
   module: {
@@ -31,5 +32,6 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
+    historyApiFallback: true,
   },
 };
