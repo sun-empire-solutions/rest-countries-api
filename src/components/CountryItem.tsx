@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { Country } from "../types";
 
 const CountryItem = ({
@@ -7,10 +9,11 @@ const CountryItem = ({
     population,
     region,
     capital,
+    cca2: countryCode,
   },
 }: IProps) => {
   return (
-    <li className="country-item">
+    <Link to={`/countries/${countryCode}`} className="country-item">
       <img className="country-item_flag" src={countryFlagUrl} alt="" />
       <div className="country-item_description">
         <span>
@@ -31,7 +34,7 @@ const CountryItem = ({
           </span>
         </div>
       </div>
-    </li>
+    </Link>
   );
 };
 

@@ -1,12 +1,16 @@
-const CountriesLayout = ({ children }: IProps) => (
+import { Outlet } from "react-router-dom";
+
+import { Navbar } from "../components/Navbar";
+
+const CountriesLayout = () => (
   <div className="layout">
-    <div className="layout_header">{children[0]}</div>
-    <div className="layout_main-content">{children[1]}</div>
+    <div className="layout_header">
+      <Navbar />
+    </div>
+    <div className="layout_main-content">
+      <Outlet />
+    </div>
   </div>
 );
-
-type IProps = {
-  children: JSX.Element[];
-};
 
 export { CountriesLayout };
