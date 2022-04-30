@@ -63,4 +63,8 @@
   border-radius: 3px;
   border: none;
   outline: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
