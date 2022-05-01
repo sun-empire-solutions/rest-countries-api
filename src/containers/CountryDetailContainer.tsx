@@ -77,7 +77,7 @@ const CountryDetailContainer = () => {
               <strong>Borders Countries: </strong>
             </h5>
             <div className="border-list">
-              {country.borders.map((border, index) => (
+              {country.borders?.map((border, index) => (
                 <div key={index} className="border-list_item">
                   {border}
                 </div>
