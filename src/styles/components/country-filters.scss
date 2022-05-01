@@ -6,10 +6,23 @@
   width: 100%;
   border: none;
 
+  @media screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
   .name-filter {
     position: relative;
     width: 350px;
     height: 100%;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+      height: 40px;
+      margin-bottom: 1.5rem;
+    }
 
     input {
       position: absolute;
@@ -23,6 +36,10 @@
       outline: none;
       padding-left: 50px;
       padding-right: 35px;
+
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
     }
 
     ::placeholder {
@@ -52,37 +69,19 @@
       }
     }
   }
-}
-@media screen and (max-width: 600px) {
-  .country-filters {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 110px;
 
-    .name-filter {
-      width: 100%;
-      height: 40px;
-
-      input {
-        width: 100%;
-      }
-    }
-  }
-}
-.region-filter {
-  padding-left: 10px;
-  width: 150px;
-  box-shadow: 1px 1px 1px 1px #dadadad4;
-  background-color: $White;
-  border-color: $White;
-  border-radius: 3px;
-  border: none;
-  outline: none;
-}
-
-@media screen and (max-width: 600px) {
   .region-filter {
-    height: 40px;
+    padding-left: 10px;
+    width: 150px;
+    box-shadow: 1px 1px 1px 1px #dadadad4;
+    background-color: $White;
+    border-color: $White;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+
+    @media screen and (max-width: 600px) {
+      height: 40px;
+    }
   }
 }

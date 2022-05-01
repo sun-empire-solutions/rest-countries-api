@@ -20,18 +20,18 @@ const CountryItem = ({
           <strong>{countryCommonName}</strong>
         </span>
         <div className="country-item_info">
-          <span>
+          <p>
             <strong>Polulation: </strong>
             {population}
-          </span>
-          <span>
+          </p>
+          <p>
             <strong>Region: </strong>
             {region}
-          </span>
-          <span>
+          </p>
+          <p>
             <strong>Capital: </strong>
             {capital}
-          </span>
+          </p>
         </div>
       </div>
     </Link>
