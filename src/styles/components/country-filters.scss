@@ -35,7 +35,7 @@
       border: none;
       outline: none;
       padding-left: 50px;
-      padding-right: 35px;
+      padding-right: 40px;
 
       @media screen and (max-width: 600px) {
         width: 100%;
@@ -43,9 +43,7 @@
     }
 
     ::placeholder {
-      position: absolute;
       color: $Dark-Gray;
-      top: 30%;
     }
 
     .img-icon-search {
@@ -79,6 +77,11 @@
     border-radius: 3px;
     border: none;
     outline: none;
+    color: hsl(200, 15%, 8%);
+
+    &:hover {
+      cursor: pointer;
+    }
 
     @media screen and (max-width: 600px) {
       height: 40px;
