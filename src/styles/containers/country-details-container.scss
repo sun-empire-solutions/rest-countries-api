@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin-bottom: 20vh;
+  height: 100%;
 }
 
 .div-button {
@@ -28,16 +28,16 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding-left: 7%;
-  padding-right: 7%;
 
   .flag-img {
     display: flex;
     flex: 1;
+    justify-content: left;
 
     img {
-      height: 280px;
-      width: 100%;
+      height: 50vh;
+      width: 85%;
+      // min-height: 300px;
     }
   }
   .description-country {
@@ -45,12 +45,11 @@
     flex: 1;
     flex-direction: column;
     justify-content: center;
-    margin-left: 4rem;
     gap: 1.5rem;
 
     .name-country {
       p {
-        font-size: 30px;
+        font-size: 2.6vw;
       }
     }
     .descrip {
@@ -58,11 +57,11 @@
       flex-direction: row;
 
       .descrip2 {
-        margin-left: 5rem;
+        margin-left: 5vw;
       }
 
       p {
-        font-size: 16px;
+        font-size: 1.3vw;
         font-weight: normal;
       }
     }
@@ -70,7 +69,7 @@
       display: flex;
 
       p {
-        font-size: 16px;
+        font-size: 1.3vw;
       }
 
       .border-list {
@@ -80,10 +79,11 @@
         gap: 0.75rem;
 
         .border-list_item {
-          padding: 0rem 1rem;
+          padding: 0vw 1vw;
           background-color: #ffffff00;
           box-shadow: 0px 0px 2px 2px #e6e6e6;
           border-radius: 4px;
+          font-size: 1.3vw;
         }
       }
     }

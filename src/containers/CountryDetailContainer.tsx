@@ -30,7 +30,9 @@ const CountryDetailContainer = () => {
         </div>
         <div className="description-country">
           <div className="name-country">
-            <p>{country.name.common}</p>
+            <p>
+              <strong>{country.name.common}</strong>
+            </p>
           </div>
           <div className="descrip">
             <div className="descrip1">
