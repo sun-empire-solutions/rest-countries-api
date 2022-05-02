@@ -30,52 +30,52 @@ const CountryDetailContainer = () => {
         </div>
         <div className="description-country">
           <div className="name-country">
-            <h1>{country.name.common}</h1>
+            <p>{country.name.common}</p>
           </div>
           <div className="descrip">
             <div className="descrip1">
-              <h5>
+              <p>
                 <strong>Native Name: </strong>
                 {Object.entries(country.name.nativeName)[0][1].common}
-              </h5>
-              <h5>
+              </p>
+              <p>
                 <strong>Population: </strong>
                 {country.population}
-              </h5>
-              <h5>
+              </p>
+              <p>
                 <strong>Region: </strong>
                 {country.region}
-              </h5>
-              <h5>
+              </p>
+              <p>
                 <strong>Sub Region: </strong>
                 {country.subregion}
-              </h5>
-              <h5>
+              </p>
+              <p>
                 <strong>Capital: </strong>
                 {country.capital}
-              </h5>
+              </p>
             </div>
             <div className="descrip2">
-              <h5>
+              <p>
                 <strong>Top Level Domain: </strong>
                 {country.tld}
-              </h5>
-              <h5>
+              </p>
+              <p>
                 <strong>Currencies: </strong>
                 {Object.entries(country.currencies)[0][1].name}
-              </h5>
-              <h5>
+              </p>
+              <p>
                 <strong>Lenguajes: </strong>
                 {Object.entries(country.languages)
                   .map((item) => item[1])
                   .join(", ")}
-              </h5>
+              </p>
             </div>
           </div>
           <div className="border-country">
-            <h5>
+            <p>
               <strong>Borders Countries: </strong>
-            </h5>
+            </p>
             <div className="border-list">
               {country.borders?.map((border, index) => (
                 <div key={index} className="border-list_item">
