@@ -1,11 +1,16 @@
 .detail-content {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
+  height: 100%;
 }
 
 .div-button {
   margin-bottom: 50px;
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 45px;
+  }
 
   button {
     height: 30px;
@@ -14,7 +19,6 @@
     border: none;
     background-color: transparent;
     box-shadow: 0px 0px 2px 2px #dadadad4;
-
     border-radius: 3px;
 
     &:hover {
@@ -27,13 +31,22 @@
   display: flex;
   flex-direction: row;
 
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
+
   .flag-img {
     display: flex;
     flex: 1;
 
     img {
-      height: 300px;
+      height: 50vh;
       width: 90%;
+
+      @media screen and (max-width: 600px) {
+        width: 100%;
+        height: 25vh;
+      }
     }
   }
   .description-country {
@@ -44,35 +57,67 @@
     padding-left: 20px;
     padding-right: 20px;
 
-    .name-country {
-      h1 {
-        margin-bottom: 30px;
+    @media screen and (max-width: 600px) {
+      margin-top: 30px;
+      padding: 0px;
+    }
 
-        font-size: 30px;
+    .name-country {
+      p {
+        margin-bottom: 30px;
+        font-size: calc(2vh + 1vh + 1vw);
+        font-weight: bold;
+
+        @media screen and (max-width: 600px) {
+          margin-bottom: 18px;
+        }
       }
     }
-    .descrip {
+    .data-country {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      h5 {
+
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+      }
+      p {
         margin-bottom: 3px;
-        font-size: 14px;
-        font-weight: normal;
+        font-size: calc(0.6rem + 0.5vh + 0.5vw);
+      }
+      .data-left {
+        @media screen and (max-width: 600px) {
+          margin-bottom: 18px;
+        }
       }
     }
     .border-country {
       display: flex;
-      align-items: center;
-      margin-top: 50px;
-      font-size: 18px;
+      margin-top: 30px;
+      font-size: calc(0.6rem + 0.5vh + 0.5vw);
+
+      @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        margin-top: 18px;
+      }
 
       .border-list {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 0.75rem;
+        margin-left: 0.75rem;
+
+        @media screen and (max-width: 600px) {
+          margin-top: 10px;
+          margin-left: 0px;
+          padding-bottom: 1.5rem;
+        }
 
         .border-list_item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           padding: 0rem 1rem;
           background-color: #ffffff00;
           box-shadow: 0px 0px 2px 2px #e6e6e6;
