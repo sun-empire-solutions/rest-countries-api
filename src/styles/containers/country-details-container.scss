@@ -5,11 +5,11 @@
   height: 100%;
 }
 
-.div-button {
+.go-back-button {
   margin-bottom: 50px;
 
   @media screen and (max-width: 600px) {
-    margin-bottom: 45px;
+    margin-bottom: 2rem;
   }
 
   button {
@@ -49,7 +49,7 @@
       }
     }
   }
-  .description-country {
+  .country-description {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -59,11 +59,15 @@
 
     @media screen and (max-width: 600px) {
       margin-top: 30px;
-      padding: 0px;
+      padding: 0 1rem;
     }
 
-    .name-country {
-      p {
+    .country-name {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+
+      .info-item {
         margin-bottom: 30px;
         font-size: calc(2vh + 1vh + 1vw);
         font-weight: bold;
@@ -81,10 +85,13 @@
       @media screen and (max-width: 600px) {
         flex-direction: column;
       }
-      p {
+
+      .info-item {
         margin-bottom: 3px;
         font-size: calc(0.6rem + 0.5vh + 0.5vw);
+        line-height: 1.5rem;
       }
+
       .data-left {
         @media screen and (max-width: 600px) {
           margin-bottom: 18px;
@@ -97,9 +104,9 @@
       font-size: calc(0.6rem + 0.5vh + 0.5vw);
 
       @media screen and (max-width: 600px) {
-        display: flex;
         flex-direction: column;
-        margin-top: 18px;
+        margin-top: 1.5rem;
+        row-gap: 0.5rem;
       }
 
       .border-list {

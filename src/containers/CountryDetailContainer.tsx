@@ -21,62 +21,60 @@ const CountryDetailContainer = () => {
     <Spinner />
   ) : (
     <div className="detail-content">
-      <div className="div-button">
+      <div className="go-back-button">
         <button onClick={handleGoBack}>Back</button>
       </div>
       <div className="country-detail">
         <div className="flag-img">
           <img src={country.flags.png} alt="" />
         </div>
-        <div className="description-country">
-          <div className="name-country">
-            <p>{country.name.common}</p>
-          </div>
+        <div className="country-description">
+          <div className="country-name">{country.name.common}</div>
           <div className="data-country">
             <div className="data-left">
-              <p>
+              <div className="info-item">
                 <strong>Native Name: </strong>
-                {Object.entries(country.name.nativeName)[0][1].common}{" "}
-              </p>
+                {Object.entries(country.name.nativeName)[0][1].common}
+              </div>
 
-              <p>
+              <div className="info-item">
                 <strong>Population: </strong>
                 {country.population}
-              </p>
-              <p>
+              </div>
+              <div className="info-item">
                 <strong>Region: </strong>
                 {country.region}
-              </p>
-              <p>
+              </div>
+              <div className="info-item">
                 <strong>Sub Region: </strong>
                 {country.subregion}
-              </p>
-              <p>
+              </div>
+              <div className="info-item">
                 <strong>Capital: </strong>
                 {country.capital}
-              </p>
+              </div>
             </div>
             <div className="data-right">
-              <p>
+              <div className="info-item">
                 <strong>Top Level Domain: </strong>
                 {country.tld}
-              </p>
-              <p>
+              </div>
+              <div className="info-item">
                 <strong>Currencies: </strong>
                 {Object.entries(country.currencies)[0][1].name}
-              </p>
-              <p>
+              </div>
+              <div className="info-item">
                 <strong>Lenguajes: </strong>
                 {Object.entries(country.languages)
                   .map((item) => item[1])
                   .join(", ")}
-              </p>
+              </div>
             </div>
           </div>
           <div className="border-country">
-            <p>
+            <div className="info-item">
               <strong>Borders Countries: </strong>
-            </p>
+            </div>
             <div className="border-list">
               {country.borders?.map((border, index) => (
                 <div key={index} className="border-list_item">
