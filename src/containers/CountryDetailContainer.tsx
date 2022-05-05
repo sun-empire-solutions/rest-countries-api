@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Spinner } from "../components/Spinner";
-
 import { useCountry } from "../hooks/use-country";
+//@ts-ignore
+import arrow from "../assets/images/arrow.svg";
 
 const CountryDetailContainer = () => {
   const { country, isLoading, error, getCountry } = useCountry();
@@ -22,8 +23,12 @@ const CountryDetailContainer = () => {
   ) : (
     <div className="detail-content">
       <div className="go-back-button">
-        <button onClick={handleGoBack}>Back</button>
+        <button onClick={handleGoBack}> Back</button>
+        <div className="img-back">
+          <img src={arrow} alt="" />
+        </div>
       </div>
+
       <div className="country-detail">
         <div className="flag-img">
           <img src={country.flags.png} alt="" />
