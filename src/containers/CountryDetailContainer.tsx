@@ -22,12 +22,10 @@ const CountryDetailContainer = () => {
     <Spinner />
   ) : (
     <div className="detail-content">
-      <div className="go-back-button">
-        <button onClick={handleGoBack}> Back</button>
-        <div className="img-back">
-          <img src={arrow} alt="" />
-        </div>
-      </div>
+      <button className="go-back-button" onClick={handleGoBack}>
+        <img className="img-back" src={arrow} />
+        <span>Back</span>
+      </button>
 
       <div className="country-detail">
         <div className="flag-img">
